@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mian/resturent.dart';
+import 'package:mian/travel.dart';
 
 import 'burgerTruck.dart';
 import 'cards.dart';
@@ -66,7 +67,8 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     final double height = MediaQuery.of(context).size.height;
     animationController.forward();
 
-    return BurgerTruck();
+    return const Travel();
+    return const BurgerTruck();
     //return Food();
     //return const Cards();
     //return const Profile();
