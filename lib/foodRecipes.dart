@@ -149,7 +149,7 @@ class _FoodRecipesState extends State<FoodRecipes> {
                               width: MediaQuery.of(context).size.width * 0.94,
                               decoration: BoxDecoration(
                                 image: const DecorationImage(
-                                    image: AssetImage("assets/bur_2.jpg"),
+                                    image: AssetImage("assets/firstProj/bur_2.jpg"),
                                     fit: BoxFit.cover),
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -216,7 +216,7 @@ class _FoodRecipesState extends State<FoodRecipes> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     image: const DecorationImage(
-                        image: AssetImage("assets/bur_1.jpg"),
+                        image: AssetImage("assets/firstProj/bur_1.jpg"),
                         fit: BoxFit.cover),
                   ),
                   width: 80,
@@ -254,7 +254,7 @@ class _FoodRecipesState extends State<FoodRecipes> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
                             image: const DecorationImage(
-                              image: AssetImage('assets/face.jpg'),
+                              image: AssetImage('assets/firstProj/face.jpg'),
                               fit: BoxFit.cover,
                             ),
                           ),
