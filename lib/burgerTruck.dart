@@ -1,9 +1,8 @@
-import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:mian/main.dart';
-import 'package:mian/restaurant.dart';
 import 'package:mian/resturent.dart';
 
+import 'collect.dart';
 import 'home.dart';
 
 class BurgerTruck extends StatefulWidget {
@@ -89,7 +88,7 @@ class _BurgerTruck extends State<BurgerTruck>  with SingleTickerProviderStateMix
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const HomePage()));
+                                builder: (context) => const Pages()));
                       },
                       icon: const Icon(
                         Icons.arrow_back_ios,

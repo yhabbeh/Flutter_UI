@@ -3,6 +3,8 @@ import 'package:mian/home.dart';
 import 'package:mian/profile.dart';
 import 'package:mian/signin.dart';
 
+import 'collect.dart';
+
 class Cards extends StatelessWidget {
   const Cards({Key? key}) : super(key: key);
 
@@ -60,7 +62,7 @@ class _MyCards extends State<MyCards> with SingleTickerProviderStateMixin {
                 color: Colors.blueGrey, size: 20),
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomePage()));
+                  MaterialPageRoute(builder: (context) => const Pages()));
             },
           ),
           actions: [

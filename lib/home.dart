@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mian/cards.dart';
-import 'package:mian/signin.dart';
+
+import 'collect.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -50,7 +51,7 @@ class _HomePageState extends State<HomePage>
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SignIn()));
+                              builder: (context) => const Pages()));
                     },
                     icon: Icon(Icons.arrow_back)),
                 actions: <Widget>[
@@ -61,7 +62,9 @@ class _HomePageState extends State<HomePage>
                             MaterialPageRoute(
                                 builder: (context) => const Cards()));
 //
-                      }, iconSize: 30, icon: Icon(Icons.menu)),
+                      },
+                      iconSize: 30,
+                      icon: Icon(Icons.menu)),
                 ],
               ),
               body: ListView(

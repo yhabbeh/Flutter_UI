@@ -11,7 +11,7 @@ class Profile extends StatelessWidget {
         children: [
           ClipPath(
             child: Container(color: Colors.black26),
-            clipper: getCliper(),
+            clipper: GetCliper(),
           ),
           Center(
             child: Column(
@@ -94,7 +94,7 @@ class Profile extends StatelessWidget {
   }
 }
 
-class getCliper extends CustomClipper<Path> {
+class GetCliper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     var path = Path();

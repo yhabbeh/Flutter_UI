@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'collect.dart';
 import 'home.dart';
 
 class Food extends StatefulWidget {
@@ -46,7 +47,7 @@ class _FoodState extends State<Food> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const HomePage()));
+                        builder: (context) => const Pages()));
               },
               icon: const Icon(Icons.arrow_back)),
 
