@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mian/home.dart';
 import 'package:mian/profile.dart';
-import 'package:mian/signin.dart';
 
 import 'collect.dart';
 

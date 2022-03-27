@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'burgerTruck.dart';
+
 class CakeCat extends StatefulWidget {
   const CakeCat({Key? key}) : super(key: key);
 
@@ -30,7 +32,7 @@ class _CakeCatState extends State<CakeCat> {
           elevation: 0,
           leading: IconButton(
             onPressed: () {
-              // Navigator.push(context,MaterialPageRoute(builder: (context) => const BurgerTruck()));
+              Navigator.push(context,MaterialPageRoute(builder: (context) => const BurgerTruck()));
             },
             icon: const Icon(Icons.arrow_back_ios),
             color: Colors.black,

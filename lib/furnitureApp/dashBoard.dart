@@ -3,6 +3,8 @@ import 'dart:html';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mian/furnitureApp/mainFurniture.dart';
+import 'package:mian/furnitureApp/productDescription.dart';
+import 'package:mian/furnitureApp/stateScreen.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({Key? key}) : super(key: key);
@@ -64,20 +66,28 @@ class _DashBoardState extends State<DashBoard> {
                       Row(
                         children: [
                           SizedBox(width: 20),
-                          Container(
-                            alignment: Alignment.topLeft,
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25),
-                                image: const DecorationImage(
-                                  image: AssetImage("assets/face.jpg"),
-                                  fit: BoxFit.cover,
-                                ),
-                                border: Border.all(
-                                    color: Colors.white,
-                                    style: BorderStyle.solid,
-                                    width: 2)),
+                          InkWell(
+                            child: Hero (
+                              tag: 'Asd',
+                              child: Container(
+                                alignment: Alignment.topLeft,
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(25),
+                                    image: const DecorationImage(
+                                      image: AssetImage("chris.jpg"),
+                                      fit: BoxFit.cover,
+                                    ),
+                                    border: Border.all(
+                                        color: Colors.white,
+                                        style: BorderStyle.solid,
+                                        width: 2)),
+                              ),
+                            ),
+                            onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const StateScreen()));
+                                  }
                           ),
                           SizedBox(
                             width: MediaQuery.of(context).size.width - 120,
@@ -339,7 +349,7 @@ class _DashBoardState extends State<DashBoard> {
                         ),//Icon
                       ],
                     ),
-                    SizedBox(height  :2,),
+                    const SizedBox(height  :2,),
                     Container(
                       width: 400,
                       alignment: Alignment.topLeft,
@@ -351,15 +361,15 @@ class _DashBoardState extends State<DashBoard> {
                       ),
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Row(
                       children: [
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         Container(
                           height: 40,
                           width: 100,
-                          color: Color(0xF1ada244) ,
-                          child: Center(
+                          color: const Color(0xF1ada244) ,
+                          child: const Center(
                             child: Text(
                               '\$89',style: TextStyle(color: Colors.black,fontSize: 20,fontWeight:FontWeight.bold),
                             ),
@@ -370,8 +380,10 @@ class _DashBoardState extends State<DashBoard> {
                           width: MediaQuery.of(context).size.width*0.35 ,
                           color: Color(0xFFfcDF14),
                           child: MaterialButton(
-                            onPressed: (){},
-                            child: Center(
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=> const ProductDescriptions()));
+                            },
+                            child: const Center(
                               child: Text(
                                 'Add to Cart',style: TextStyle(color: Colors.black,fontSize: 20,fontWeight:FontWeight.bold),
                               ),
