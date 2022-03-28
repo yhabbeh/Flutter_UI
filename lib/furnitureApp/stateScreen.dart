@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mian/furnitureApp/dashBoard.dart';
+import 'package:mian/furnitureApp/shoppingCart.dart';
 
 class StateScreen extends StatefulWidget {
   const StateScreen({Key? key}) : super(key: key);
@@ -9,7 +10,14 @@ class StateScreen extends StatefulWidget {
   State<StateScreen> createState() => _StateScreenState();
 }
 
-class _StateScreenState extends State<StateScreen> {
+class _StateScreenState extends State<StateScreen> with SingleTickerProviderStateMixin {
+  TabController? tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(length: 3, vsync: this);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -229,6 +237,33 @@ class _StateScreenState extends State<StateScreen> {
             ],
           )
         ],
+      ),
+      bottomNavigationBar: Material(
+        color: Colors.grey,
+        child: TabBar(
+          controller: tabController,
+          indicatorColor: Colors.white,
+          tabs: [
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const DashBoard()));
+                },
+                icon: const Icon(Icons.shopping_basket, color: Colors.black)),
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const ShoppingCart()));
+                },
+                icon: const Icon(Icons.shopping_cart, color: Colors.black)),
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const StateScreen()));
+                },
+                icon: Icon(Icons.account_box, color: Colors.black)),
+          ],
+        ),
       ),
     );
   }

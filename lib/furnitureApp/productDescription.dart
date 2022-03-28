@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:mian/furnitureApp/shoppingCart.dart';
+import 'package:mian/furnitureApp/stateScreen.dart';
 
 import 'dashBoard.dart';
 
@@ -11,7 +12,14 @@ class ProductDescriptions extends StatefulWidget {
   State<ProductDescriptions> createState() => _ProductDescriptionsState();
 }
 
-class _ProductDescriptionsState extends State<ProductDescriptions> {
+class _ProductDescriptionsState extends State<ProductDescriptions>with SingleTickerProviderStateMixin {
+  TabController? tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(length: 3, vsync: this);
+  }
   int photoIndex = 0;
 
   List<String> photos = [
@@ -299,6 +307,33 @@ class _ProductDescriptionsState extends State<ProductDescriptions> {
             ],
           )
         ],
+      ),
+      bottomNavigationBar: Material(
+        color: Colors.grey,
+        child: TabBar(
+          controller: tabController,
+          indicatorColor: Colors.white,
+          tabs: [
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const DashBoard()));
+                },
+                icon: Icon(Icons.shopping_basket, color: Colors.black)),
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const ShoppingCart()));
+                },
+                icon: const Icon(Icons.shopping_cart, color: Colors.black)),
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const StateScreen()));
+                },
+                icon: Icon(Icons.account_box, color: Colors.black)),
+          ],
+        ),
       ),
     );
   }

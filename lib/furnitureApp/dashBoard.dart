@@ -1,9 +1,8 @@
 import 'dart:html';
 
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:mian/furnitureApp/mainFurniture.dart';
 import 'package:mian/furnitureApp/productDescription.dart';
+import 'package:mian/furnitureApp/shoppingCart.dart';
 import 'package:mian/furnitureApp/stateScreen.dart';
 
 class DashBoard extends StatefulWidget {
@@ -14,7 +13,14 @@ class DashBoard extends StatefulWidget {
   State<DashBoard> createState() => _DashBoardState();
 }
 
-class _DashBoardState extends State<DashBoard> {
+class _DashBoardState extends State<DashBoard> with SingleTickerProviderStateMixin {
+  TabController? tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(length: 3, vsync: this);
+  }
   List<bool> isFavorite = [true,true,false,true,true,true,false,true];
   bool changFavourite(getColor) {
     setState(() {
@@ -283,6 +289,33 @@ class _DashBoardState extends State<DashBoard> {
             ],
           )
         ],
+      ),
+      bottomNavigationBar: Material(
+        color: Colors.grey,
+        child: TabBar(
+          controller: tabController,
+          indicatorColor: Colors.white,
+          tabs: [
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const DashBoard()));
+                },
+                icon: Icon(Icons.shopping_basket, color: Colors.black)),
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const ShoppingCart()));
+                },
+                icon: const Icon(Icons.shopping_cart, color: Colors.black)),
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const StateScreen()));
+                },
+                icon: Icon(Icons.account_box, color: Colors.black)),
+          ],
+        ),
       ),
     );
   }
