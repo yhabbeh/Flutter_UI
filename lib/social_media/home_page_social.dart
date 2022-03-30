@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mian/social_media/widget/style_row.dart';
 import 'package:mian/social_media/widget/build_circle_available_bar.dart';
@@ -42,7 +41,7 @@ class _HomePageState extends State<HomePage> {
         ),
         leading: IconButton(
           onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
             Icons.menu,
             color: Colors.black,
           ),
@@ -109,20 +108,20 @@ class _HomePageState extends State<HomePage> {
               ],
             ), //horizontal
           ), //horizontal
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
 
 
           Padding(
             padding: const EdgeInsets.all(15.0),
-            child: Container(
+            child: SizedBox(
               width: width,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
+                  SizedBox(
                     width: width*0.45,
                     child: ListView.separated(
                         shrinkWrap: true,
