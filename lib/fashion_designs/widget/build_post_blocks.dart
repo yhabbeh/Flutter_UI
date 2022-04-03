@@ -1,6 +1,9 @@
+
 import 'package:flutter/material.dart';
+import 'package:mian/fashion_designs/full_frame_picture.dart';
 
 Widget buildPostBlock({
+  required BuildContext context,
   required double width,
   required double height,
   required String imgPath1,
@@ -81,35 +84,55 @@ Widget buildPostBlock({
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: height*0.5+10,
-                width: width*0.5-25,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),image: DecorationImage(
-                  image: AssetImage(imgPath1),fit: BoxFit.cover,
-                )
+              InkWell(
+                onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => FullFramePage(heroTag: imgPath1)));},
+                child: Hero(
+                  tag: imgPath1,
+                  child: Container(
+                    height: height*0.5+10,
+                    width: width*0.5-25,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),image: DecorationImage(
+                      image: AssetImage(imgPath1),fit: BoxFit.cover,
+                    )
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(width:10,),
               Column(
                 children: [
-                  Container(
-                    height: height * 0.3,
-                    width: width*0.5-60,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),image: DecorationImage(
-                      image: AssetImage(imgPath2),fit: BoxFit.cover,
-                    )
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => FullFramePage(heroTag: imgPath2)));
+                    },
+                    child: Hero(
+                      tag: imgPath2,
+                      child: Container(
+                        height: height * 0.3,
+                        width: width*0.5-60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),image: DecorationImage(
+                          image: AssetImage(imgPath2),fit: BoxFit.cover,
+                        )
+                        ),
+                      ),
                     ),
                   ),
                   const SizedBox(height :10,),
-                  Container(
-                    height: height * 0.2,
-                    width: width*0.5-60,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),image: DecorationImage(
-                      image: AssetImage(imgPath3),fit: BoxFit.cover,
-                    )
+                  InkWell(
+                    onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => FullFramePage(heroTag: imgPath3)));},
+                    child: Hero(
+                      tag:imgPath3 ,
+                      child: Container(
+                        height: height * 0.2,
+                        width: width*0.5-60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),image: DecorationImage(
+                          image: AssetImage(imgPath3),fit: BoxFit.cover,
+                        )
+                        ),
+                      ),
                     ),
                   ),
                 ],

@@ -91,6 +91,7 @@ class _HomePageFashionState extends State<HomePageFashion> {
                 itemCount: modelgrid.length*2,
                 itemBuilder:  (context, index) =>
               buildPostBlock(
+                context: context,
                   width: width,
                   height: height,
                   imgPath1: modelgrid[index%model.length],

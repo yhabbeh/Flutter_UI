@@ -92,7 +92,7 @@ class _DashBoardState extends State<DashBoard> with SingleTickerProviderStateMix
                               ),
                             ),
                             onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const StateScreen()));
+
                                   }
                           ),
                           SizedBox(

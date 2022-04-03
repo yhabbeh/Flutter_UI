@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mian/cards.dart';
-
 import 'collect.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   late Animation animation, delayedAnimation, muchDelayedAnimation;

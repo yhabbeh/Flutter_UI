@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mian/fashion_designs/home_page_fasion.dart';
 
+import 'full_frame_picture.dart';
+
 void main()=> runApp(const MainApp());
 class MainApp extends StatelessWidget {
   const MainApp({Key? key}) : super(key: key);
@@ -12,7 +14,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "FashionApp",
-      home: HomePageFashion(),
+      home: FullFramePage(heroTag: "assets/model1.jpeg"),
     );
   }
 }

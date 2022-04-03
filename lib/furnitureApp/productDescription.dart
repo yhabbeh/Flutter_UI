@@ -53,6 +53,7 @@ class _ProductDescriptionsState extends State<ProductDescriptions>with SingleTic
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: ListView(
         shrinkWrap: true,
@@ -268,14 +269,14 @@ class _ProductDescriptionsState extends State<ProductDescriptions>with SingleTic
                         child: Row(
                           children: [
                             SizedBox(
-                                width: 100,
+                                width: width*0.2,
                                 child: IconButton(
                                     onPressed: () {},
                                     icon: const Icon(Icons.shopping_cart),
                                     color: Colors.deepOrangeAccent,
                                     iconSize: 30)),
                             SizedBox(
-                                width: 100,
+                                width: width*0.2,
                                 child: IconButton(
                                     onPressed: () {},
                                     icon: const Icon(Icons.account_box),
@@ -285,7 +286,7 @@ class _ProductDescriptionsState extends State<ProductDescriptions>with SingleTic
                               child: Container(
                                 padding: EdgeInsets.all(10),
                                 color: Colors.yellow,
-                                width: MediaQuery.of(context).size.width - 260,
+                                width: width*0.45,
                                 height: 60,
                                 child:  Center(
                                   child: Text("Add to Cart",
