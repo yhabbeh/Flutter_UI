@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mian/chef_profile/main_chef.dart';
+import 'package:mian/Gourmettakeaway/Widget/build_menu_card.dart';
 
 class HomePageGourmet extends StatefulWidget {
   const HomePageGourmet({Key? key}) : super(key: key);
@@ -8,7 +8,17 @@ class HomePageGourmet extends StatefulWidget {
   State<HomePageGourmet> createState() => _HomePageGourmetState();
 }
 
-class _HomePageGourmetState extends State<HomePageGourmet> {
+class _HomePageGourmetState extends State<HomePageGourmet>
+    with SingleTickerProviderStateMixin {
+  late TabController tabController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    tabController = TabController(length: 3, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -61,19 +71,61 @@ class _HomePageGourmetState extends State<HomePageGourmet> {
                       children: const [
                         Text(
                           "Jacob Coleman",
-                          style:
-                              TextStyle(
-                                fontWeight: FontWeight.bold,
-                                  color: Color(0xffc69c0f),
-                                  fontSize: 30),
-
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xffc69c0f),
+                              fontSize: 30),
                         ),
-
                       ],
                     )
                   ],
                 ))
           ],
+        ),
+        TabBar(
+          controller: tabController,
+          indicatorColor: Color(0xffc69c0f),
+          indicatorSize: TabBarIndicatorSize.label,
+          labelColor: Color(0xffc69c0f),
+          tabs: const [
+            Tab(
+              child: Text(
+                "Guess you like",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            Tab(
+              child: Text(
+                "News",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            Tab(
+              child: Text(
+                "Coupon",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+        ),
+        Container(
+          height: 350,
+          child: ListView.separated(
+            shrinkWrap: true,
+              separatorBuilder: (BuildContext context, int index) {
+                return const SizedBox(height: 10);
+              },
+              itemCount: 5,
+              itemBuilder: (context, index) => build_manu_car(
+                  width: width,
+                  height: height,
+                  context: context,
+                  imgPath: "assets/bur_2.jpg",
+                  menuName: "chease burger",
+                  rate: index + 1 % index*0.1,
+                  details:
+                      "a dish consisting of a flat round cake of minced beef, or sometimes another savoury ingredient,"
+                      " that is fried or grilled and served in a split bun or roll with various condiments and toppings.")),
         ),
       ],
     ));
