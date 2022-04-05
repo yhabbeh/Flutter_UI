@@ -8,8 +8,8 @@ void ConfirmingDialogButton({
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text("Confirmning"),
-        content: Text("Are you sure to buy this item "),
+        title: const Text("Confirmning"),
+        content: const Text("Are you sure to buy this item "),
         actions: [
           InkWell(
             onTap: () {

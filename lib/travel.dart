@@ -1,9 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:mian/home.dart';
 import 'package:mian/profiletravel.dart';
-
-import 'burgerTruck.dart';
 import 'collect.dart';
 
 class Travel extends StatefulWidget {

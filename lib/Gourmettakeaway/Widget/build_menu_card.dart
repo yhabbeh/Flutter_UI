@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:mian/chef_profile/main_chef.dart';
-import 'package:mian/fashion_designs/main_fashion.dart';
 
 Widget build_manu_car({
   required width,
