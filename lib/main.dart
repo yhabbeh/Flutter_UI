@@ -68,18 +68,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     final double height = MediaQuery.of(context).size.height;
     animationController.forward();
 
-
-    return const CakeCat();
-    return const Pages();
-    return const FoodRecipes();
-    return const ProfileTravel();
-    return const Pages();
-    return const Travel();
-    return const BurgerTruck();
-    //return Food();
-    //return const Cards();
-    //return const Profile();
-    //return const SignIn();
+  return const SignIn();
 
   }
 
