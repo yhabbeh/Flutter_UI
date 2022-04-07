@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'home_page_plant.dart';
-
+import 'package:mian/plants/plant_details.dart';
 
 void main() => runApp(MainAppPlants());
 
@@ -18,7 +16,7 @@ class _MainAppPlantsState extends State<MainAppPlants> {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Plants",
-      home: HomePagePlants(),
+      home: PlantDetails( count: 1,cost: 262 ,namePL: "Alovera",typePL: "Indoor",imgPath:     "assets/flowerplant.png",),
     );
   }
 }
